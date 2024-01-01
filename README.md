@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# SearchBox using Typesense
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project includes usage of very popular and fast search engine i.e., [Typesense](https://typesense.org/). Typesense is the lightening-fast Open source Search engine that uses cutting-edge search algorithms that take advantage of the latest advances in Hardware Capabilities & Machine Learning. It provides a great wrapper & RESTful APIs to integrate with the typesense Cloud.
 
-## Available Scripts
+Typesense Cloud is the platform to upload the dataset that we want typesense to indexed and one the platform indexed the dataset then it become very easy and very fast to retrieve the data from typesense. Typesense under the hood do all kind of computation and just gives us the results according to our query along with the some other helpful attributes to configure like
 
-In the project directory, you can run:
+1. Typo Tolerance
+2. Federated Search
+3. Easy High Availability
+4. Tunable Ranking
+5. Filtering & Faceting
 
-### `npm start`
+  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Dataset Used for the Project:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  
 
-### `npm test`
+There are a lot of options available for the dataset. This dataset that I have used for this Project is of Movies. I have taken this dataset from [Kaggle] (https://www.kaggle.com/). It consist of **8000+** records of Netflix Movies. Dataset is fun to work with as it consist of many different attributes such as
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Title (searching will be on this attribute) 
+- Cast
+- Country
+- Date Added
+- Description
+- Director
+- Duration
+- Release Year (Filter on this attribute)
+- Type etc (Filter on this attribute)
+- Rating etc
 
-### `npm run build`
+### Searching Crieteria:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ 
+I have make this very simple. the **title** attribute of the movie is used for searching when user sends the query. All of the movies matching the title attribute will be returned along with all other attirbutes. Other then that, Once user got the data from Typesense. The User then also have the ability to further filter the data by two attributes like **Release Year, Type**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  
+  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## How to Run the Project:
 
-### `npm run eject`
+  
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+For the demo purpose, this project has already been deployed on netlify. You can checkout the demo [here](https://venerable-parfait-cada93.netlify.app/). Here You can find the Input field to enter the name of the Movie and it will extract the data from the Typesense Cloud and after it is very easy to interact with the data. Enjoy!!.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  
+  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### How to Setup and Run the Project locally.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+  
 
-## Learn More
+Project is not complex to setup. It's is React based application. Simply clone the repository on local and install all of the node packages using command
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`npm install`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+After that there are three main things that you need.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+ 1. Typesense **API Key**
+ 2. Typesense **Host Node**
+ 3. **Dataset** deployed on Typesense Cloud
 
-### Analyzing the Bundle Size
+  
+I have deployed the code on Typesense Cloud and from their you can easily get the API keys and Host Node. Perform these actions Step-by-step to configure the project on local.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Get the Dataset from Kaggle. You can **download the dataset** from here [Netflix-Movies](https://www.kaggle.com/datasets/shivamb/netflix-shows). After downloading it, Upload the dataset on Typesense Cloud. Don't worry. They provide **30 days** free trail on basic package. You will not be charged. Make an account on Typesense Cloud and upload the Dataset over there so that Typesnese can index the data.
 
-### Making a Progressive Web App
+2. Get the **API keys** and **Host Node** from Typesense Cloud. In the Overview section, you easily download the credentials to use.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+3. Inside the Project. Set the **environment variables** by their specified position and name.
+4. After doing all of the things properly then simply run the node server using `npm start`
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you have done everything properly, then it will be running as exact as in the demo. However, in case of any issues, queries and suggestions, You can contact me. Thanks.!!
