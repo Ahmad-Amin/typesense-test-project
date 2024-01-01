@@ -10,7 +10,7 @@ const DocumentProvider = (props) => {
   const [showMore, setShowMore] = useState(false);
 
   const tranformRecordAndStore = (apiResponse) => {
-
+    console.log(apiResponse)
     const { hits, facet_counts, found } = apiResponse.results[0] || {};
 
     if (showMore) {

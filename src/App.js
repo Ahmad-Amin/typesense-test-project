@@ -83,7 +83,7 @@ const App = () => {
     fetchDataFromTypesense();
 
     return () => handleInputChange.cancel();
-  }, [searchParameters, client, docCtx, handleInputChange]);
+  }, [searchParameters, client]);
 
   return (
     <div className="text-center">
